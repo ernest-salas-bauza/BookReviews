@@ -1,4 +1,4 @@
-# Section 4: Project #2 - Book Reviews
+# Book Reviews
 
 This project is part of Section 4 of the course and focuses on building a **Book Reviews** web application. The goal is to create a fully functional system where users can view, rate, and review books, leveraging Laravel's component-based architecture and advanced features.
 
