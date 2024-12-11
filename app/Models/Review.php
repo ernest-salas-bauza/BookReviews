@@ -12,10 +12,16 @@ class Review extends Model
     protected $fillable = [
         'review',
         'rating',
-    ] ;
+    ];
 
     public function book()
     {
         return $this->belongsTo(Book::class);
+    }
+
+    protected static function booted()
+    {
+        static::updated(fn(Review $review) => cache()->forget('book:' . $review->book_id));
+        static::deleted(fn(Review $review) => cache()->forget('book:' . $review->book_id));
     }
 }
